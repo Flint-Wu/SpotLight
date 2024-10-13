@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public static class EnevtHandler
+public static class EventHandler
 {
     public static event Action BeforeSceneUnloadEvent;
     public static void CallBeforeSceneUnloadEvent()
@@ -9,11 +9,12 @@ public static class EnevtHandler
         BeforeSceneUnloadEvent?.Invoke();
     }
 
-    public static event Action AfterSceneUnloadEvent;
-    public static void CallAfterSceneUnloadEvent()
+    public static event Action AfterSceneLoadedEvent;
+    public static void CallAfterSceneLoadedEvent()
     {
-        AfterSceneUnloadEvent?.Invoke();
+        AfterSceneLoadedEvent?.Invoke();
     }
+
 
     public static event Action GameStateChangeEvent;
     public static void CallGameStateChangeEvent()
