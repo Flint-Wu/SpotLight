@@ -22,4 +22,10 @@ public static class EventHandler
         GameStateChangeEvent?.Invoke();
     }
 
+    public static event Action<int> ScoreAddEvent;
+    public static void CallScoreAddEvent(int score)
+    {
+        ScoreAddEvent?.Invoke(score);
+    }
+
 }
