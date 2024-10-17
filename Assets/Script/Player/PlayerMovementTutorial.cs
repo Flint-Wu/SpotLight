@@ -10,25 +10,25 @@ public class PlayerMovementTutorial : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
 
-    public float groundDrag;
+    bool readyToJump;
 
     [HideInInspector] public float walkSpeed;
     [HideInInspector] public float sprintSpeed;
 
-    [Header("Keybinds")]
-    public KeyCode jumpKey = KeyCode.Space;
-
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
-    bool grounded;
+    bool grounded = true;
 
     public Transform orientation;
 
     float horizontalInput;
     float verticalInput;
 
-    Vector3 moveDirection;
+    public Material front, back;
+    public MeshRenderer playerImg;
+
+    public Vector3 moveDirection;
 
     Rigidbody rb;
 
@@ -42,6 +42,7 @@ public class PlayerMovementTutorial : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
+        readyToJump = true;
     }
 
     private void Update()
@@ -52,11 +53,6 @@ public class PlayerMovementTutorial : MonoBehaviour
         MyInput();
         SpeedControl();
 
-        // handle drag
-        if (grounded)
-            rb.drag = groundDrag;
-        else
-            rb.drag = 0;
     }
 
     private void FixedUpdate()
@@ -68,23 +64,25 @@ public class PlayerMovementTutorial : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-
-
-
-        if (horizontalInput ==0 && verticalInput == 0)
-        {
-            rb.velocity = new Vector3(0, rb.velocity.y, 0);
-        }
+        
     }
 
     private void MovePlayer()//角色移动
     {
         // calculate movement direction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        
 
         // on ground
-        if(grounded)
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        rb.velocity = moveDirection.normalized * moveSpeed * 10f;
+        Pic();
+        //rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+
+        // no input
+        if (horizontalInput != 0 && verticalInput != 0 && rb.velocity != Vector3.zero)
+        {
+            rb.velocity = new Vector3(0, rb.velocity.y, 0);
+        }
 
     }
 
@@ -98,6 +96,27 @@ public class PlayerMovementTutorial : MonoBehaviour
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
+    }
+
+    private void Pic()//角色方向
+    {
+        if (horizontalInput > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if(horizontalInput < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+
+        if (verticalInput > 0)
+        {
+            playerImg.materials[0] = front;
+        }
+        else if(verticalInput < 0)
+        {
+            playerImg.materials[0] = back;
         }
     }
 }

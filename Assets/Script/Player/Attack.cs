@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject Light;
+
     void Start()
     {
         
@@ -13,6 +14,16 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButton(0))
+        {
+            Light.SetActive(true);
+            Debug.Log("1");
+        }
+        else
+        {
+            Light.SetActive(false);
+        }
     }
+
+
 }
