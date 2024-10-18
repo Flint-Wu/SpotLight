@@ -1260,7 +1260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alpha: 0.5
-  size: 0.0433
+  size: 0.1
   direction: 0
   velocity: {x: 0, y: 0, z: 0.5}
   speed: 0.03
