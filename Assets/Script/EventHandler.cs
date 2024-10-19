@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public static class EventHandler
 {
@@ -26,6 +27,12 @@ public static class EventHandler
     public static void CallScoreAddEvent(int score)
     {
         ScoreAddEvent?.Invoke(score);
+    }
+
+    public static event Action<GameObject> EnemyDectedEvent;
+    public static void CallEnemyDectedEvent(GameObject Enemy)
+    {
+        EnemyDectedEvent?.Invoke(Enemy);
     }
 
 }

@@ -110,13 +110,13 @@ public class PlayerMovementTutorial : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
-        if (verticalInput > 0)
-        {
-            playerImg.materials[0] = front;
-        }
-        else if(verticalInput < 0)
-        {
-            playerImg.materials[0] = back;
-        }
+        //if (verticalInput > 0)
+        //{
+        //    playerImg.materials[0] = front;
+        //}
+        //else if(verticalInput < 0)
+        //{
+        //    playerImg.materials[0] = back;
+        //}
     }
 }
