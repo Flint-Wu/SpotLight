@@ -1,12 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using System;
 
 public class PlayerMovementTutorial : MonoBehaviour
 {
-
     [Header("Movement")]
     public float moveSpeed;
 
@@ -25,17 +20,12 @@ public class PlayerMovementTutorial : MonoBehaviour
     float horizontalInput;
     float verticalInput;
 
-    public Material front, back;
+    public Material topLeftMaterial, topRightMaterial, bottomLeftMaterial, bottomRightMaterial;
     public MeshRenderer playerImg;
 
     public Vector3 moveDirection;
 
     Rigidbody rb;
-
-    private void Awake()
-    {
-
-    }
 
     private void Start()
     {
@@ -47,12 +37,11 @@ public class PlayerMovementTutorial : MonoBehaviour
 
     private void Update()
     {
-        // ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
 
         MyInput();
         SpeedControl();
-
+        Pic();  // 检测鼠标位置并更改材质球
     }
 
     private void FixedUpdate()
@@ -60,63 +49,56 @@ public class PlayerMovementTutorial : MonoBehaviour
         MovePlayer();
     }
 
-    private void MyInput()//玩家输入
+    private void MyInput()
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        
     }
 
-    private void MovePlayer()//角色移动
+    private void MovePlayer()
     {
-        // calculate movement direction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        
 
-        // on ground
         rb.velocity = moveDirection.normalized * moveSpeed * 10f;
-        Pic();
-        //rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
-        // no input
         if (horizontalInput != 0 && verticalInput != 0 && rb.velocity != Vector3.zero)
         {
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
         }
-
     }
 
-
-    private void SpeedControl()//角色速度
+    private void SpeedControl()
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        // limit velocity if needed
-        if(flatVel.magnitude > moveSpeed)
+        if (flatVel.magnitude > moveSpeed)
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
     }
 
-    private void Pic()//角色方向
+    private void Pic()
     {
-        if (horizontalInput > 0)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-        else if(horizontalInput < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
+        Vector3 mousePos = Input.mousePosition;
+        float screenWidth = Screen.width;
+        float screenHeight = Screen.height;
 
-        //if (verticalInput > 0)
-        //{
-        //    playerImg.materials[0] = front;
-        //}
-        //else if(verticalInput < 0)
-        //{
-        //    playerImg.materials[0] = back;
-        //}
+        if (mousePos.x < screenWidth / 2 && mousePos.y > screenHeight / 2)
+        {
+            playerImg.material = topLeftMaterial;
+        }
+        else if (mousePos.x > screenWidth / 2 && mousePos.y > screenHeight / 2)
+        {
+            playerImg.material = topRightMaterial;
+        }
+        else if (mousePos.x < screenWidth / 2 && mousePos.y < screenHeight / 2)
+        {
+            playerImg.material = bottomLeftMaterial;
+        }
+        else if (mousePos.x > screenWidth / 2 && mousePos.y < screenHeight / 2)
+        {
+            playerImg.material = bottomRightMaterial;
+        }
     }
 }

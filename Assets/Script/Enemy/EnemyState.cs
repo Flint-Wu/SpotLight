@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class EnemyState : MonoBehaviour
 {
-    public string EnemyName;
-    public int health;
+    public float healthTime,MaxTime;
 
     public float damageCooldown = 2.0f;  // 每次碰撞伤害之间的间隔时间
     private float lastDamageTime = -Mathf.Infinity;
 
     private Transform player;
+    public GameObject playerLight;
 
     public bool WasDect,WasAttack;
     
@@ -18,72 +18,73 @@ public class EnemyState : MonoBehaviour
 
     void Start()
     {
-        
+        playerLight = GameObject.FindWithTag("playerAttack");
     }
 
     private void OnEnable()
     {
-        EventHandler.EnemyDectedEvent += Dected;
     }
 
     private void OnDisable()
     {
-        EventHandler.EnemyDectedEvent -= Dected;
-    }
-
-    private void Dected(GameObject @object)
-    {
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (WasDect && WasAttack)
-        {
-            Hurt();
-        }
-    }
-
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-        if (health <= 0)
+        TakeDamage();
+        if (healthTime >= MaxTime)
         {
             Die();
         }
+
+        if (!playerLight.activeInHierarchy)
+        {
+            WasAttack = false;
+        }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void TakeDamage()
     {
-        //if (collision.gameObject.CompareTag("Player"))
-        //{
-        //    // 检查是否超过了伤害冷却时间
-        //    if (Time.time >= lastDamageTime + damageCooldown)
-        //    {
-        //        // 主角受伤害
-        //    }
-        //}
-        //else if (collision.gameObject.CompareTag("Weapon")) //tag名待定
-        //{
-        //    // 敌人受伤害
-        //    //TakeDamage(.damage);
-        //}
+        if (WasAttack && WasDect)
+        {
+            healthTime += Time.deltaTime;
+        }
+        if (healthTime <= MaxTime && (!WasAttack||!WasDect) && healthTime >= 0) 
+        {
+            healthTime -= Time.deltaTime;
+        }
+        
+    }
 
-        if (collision.transform.CompareTag("Light"))
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.CompareTag("Light"))
             WasDect = true;
-        if (collision.transform.CompareTag("playerAttack"))
+        else if (other.transform.CompareTag("playerAttack"))
             WasAttack = true;
-
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.transform.CompareTag("Light"))
+        if (other.transform.CompareTag("Light"))
+        {
+            WasDect = true;
+        }
+        else if (other.transform.CompareTag("playerAttack"))
+        {
+            WasAttack = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.CompareTag("Light"))
             WasDect = false;
-        if (collision.transform.CompareTag("playerAttack"))
+        else if (other.transform.CompareTag("playerAttack"))
             WasAttack = false;
     }
+
 
     private void Hurt()
     {
