@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EnemyState : MonoBehaviour
@@ -13,6 +14,8 @@ public class EnemyState : MonoBehaviour
     public GameObject playerLight;
 
     public bool WasDect,WasAttack;
+
+    public string tag;
     
 
 
@@ -54,12 +57,11 @@ public class EnemyState : MonoBehaviour
         {
             healthTime -= Time.deltaTime;
         }
-        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag("Light"))
+        if (other.transform.CompareTag(tag))
             WasDect = true;
         else if (other.transform.CompareTag("playerAttack"))
             WasAttack = true;
@@ -67,7 +69,7 @@ public class EnemyState : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.transform.CompareTag("Light"))
+        if (other.transform.CompareTag(tag))
         {
             WasDect = true;
         }
@@ -79,12 +81,11 @@ public class EnemyState : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.CompareTag("Light"))
+        if (other.transform.CompareTag(tag))
             WasDect = false;
         else if (other.transform.CompareTag("playerAttack"))
             WasAttack = false;
     }
-
 
     private void Hurt()
     {
@@ -93,6 +94,6 @@ public class EnemyState : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        Destroy(gameObject.transform.parent.gameObject);
     }
 }

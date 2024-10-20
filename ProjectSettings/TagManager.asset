@@ -7,6 +7,9 @@ TagManager:
   - Ground
   - Light
   - playerAttack
+  - BlueLight
+  - YellowLight
+  - RedLight
   layers:
   - Default
   - TransparentFX

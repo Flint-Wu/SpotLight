@@ -6,16 +6,18 @@ public class EnemyMove : MonoBehaviour
 {
     public float moveSpeed = 3.0f;
     public float detectionRange = 10.0f;
+    public float StopDis;
+    public float playerDis;
 
-    private Transform playerPos;
-    private GameObject player;
+    public Transform playerPos;
+    protected GameObject player;
 
-    private void Start()
+    protected void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void Update()
+    protected void Update()
     {
         if (player != null)
         {
@@ -23,20 +25,20 @@ public class EnemyMove : MonoBehaviour
         }
     }
 
-    private void MoveTowardsPlayer()
+    protected void MoveTowardsPlayer()
     {
-        playerPos = player.transform;
-        float distanceToPlayer = Vector3.Distance(transform.position, playerPos.position);
+        float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+        playerDis = distanceToPlayer;
 
-        if (distanceToPlayer <= detectionRange)
+        if (distanceToPlayer >= StopDis)
         {
-            Vector3 direction = (playerPos.position - transform.position).normalized;
+            Vector3 direction = (player.transform.position - transform.position).normalized;
             transform.position += direction * moveSpeed * Time.deltaTime;
         }
     }
 
     // 绘制检测范围的Gizmos
-    private void OnDrawGizmos()
+    protected void OnDrawGizmos()
     {
         // 设置Gizmos颜色为红色
         Gizmos.color = Color.red;

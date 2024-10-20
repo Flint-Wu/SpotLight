@@ -21,6 +21,7 @@ public class PlayerMovementTutorial : MonoBehaviour
     float verticalInput;
 
     public Material topLeftMaterial, topRightMaterial, bottomLeftMaterial, bottomRightMaterial;
+    public Material topCenterMaterial, bottomCenterMaterial;  // 新增两个材质球：中上和中下
     public MeshRenderer playerImg;
 
     public Vector3 moveDirection;
@@ -84,21 +85,39 @@ public class PlayerMovementTutorial : MonoBehaviour
         float screenWidth = Screen.width;
         float screenHeight = Screen.height;
 
-        if (mousePos.x < screenWidth / 2 && mousePos.y > screenHeight / 2)
+        // 屏幕宽度分成三列，分别是左、中、右
+        // 屏幕高度分成两行，分别是上、下
+        bool isLeft = mousePos.x < screenWidth / 3;
+        bool isRight = mousePos.x > 2 * screenWidth / 3;
+        bool isCenter = !isLeft && !isRight;
+
+        bool isTop = mousePos.y > screenHeight / 2;
+        bool isBottom = mousePos.y < screenHeight / 2;
+
+        // 根据鼠标位置来改变材质
+        if (isLeft && isTop)
         {
-            playerImg.material = topLeftMaterial;
+            playerImg.material = topLeftMaterial;    // 左上
         }
-        else if (mousePos.x > screenWidth / 2 && mousePos.y > screenHeight / 2)
+        else if (isRight && isTop)
         {
-            playerImg.material = topRightMaterial;
+            playerImg.material = topRightMaterial;   // 右上
         }
-        else if (mousePos.x < screenWidth / 2 && mousePos.y < screenHeight / 2)
+        else if (isLeft && isBottom)
         {
-            playerImg.material = bottomLeftMaterial;
+            playerImg.material = bottomLeftMaterial; // 左下
         }
-        else if (mousePos.x > screenWidth / 2 && mousePos.y < screenHeight / 2)
+        else if (isRight && isBottom)
         {
-            playerImg.material = bottomRightMaterial;
+            playerImg.material = bottomRightMaterial;// 右下
+        }
+        else if (isCenter && isTop)
+        {
+            playerImg.material = topCenterMaterial;  // 中上
+        }
+        else if (isCenter && isBottom)
+        {
+            playerImg.material = bottomCenterMaterial;// 中下
         }
     }
 }
