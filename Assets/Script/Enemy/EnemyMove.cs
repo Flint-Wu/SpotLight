@@ -14,12 +14,16 @@ public class EnemyMove : MonoBehaviour
     public Transform target; 
     public NavMeshAgent nav;
 
-    
+    [SerializeField]
+    protected Vector3 tempScale;
+
     protected float Tik;
 
      void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+
+        
     }
 
      void Update()
@@ -29,6 +33,7 @@ public class EnemyMove : MonoBehaviour
             MoveTowardsPlayer();
         }
 
+        
     }
 
     protected void MoveTowardsPlayer()
@@ -41,6 +46,20 @@ public class EnemyMove : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
         playerDis = distanceToPlayer;
 
+    }
+
+    protected void TurnAround()
+    {
+        
+
+        if (target.position.z > transform.position.z)
+        {
+            transform.localScale = new Vector3(tempScale.x, tempScale.y, -tempScale.z);
+        }
+        else if (target.position.z < transform.position.z)
+        {
+            transform.localScale = new Vector3(tempScale.x, tempScale.y, tempScale.z);
+        }
     }
 
 

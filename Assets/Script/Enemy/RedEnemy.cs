@@ -16,13 +16,15 @@ public class RedEnemy : EnemyMove
 
     void Start()
     {
-        
+
+        tempScale = transform.localScale;
     }
 
     // Update is called once per frame
     void Update()
     {
         Attack();
+        TurnAround();
     }
 
     private void Attack() 
