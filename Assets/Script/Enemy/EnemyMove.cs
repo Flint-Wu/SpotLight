@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyMove : MonoBehaviour
 {
     public float playerDis;
+    public float tempSpeed;
 
     public bool Attacking;
 
@@ -13,18 +14,12 @@ public class EnemyMove : MonoBehaviour
     protected GameObject player;
     public Transform target; 
     public NavMeshAgent nav;
+    protected EnemyState EnemyState;
 
     [SerializeField]
     protected Vector3 tempScale;
 
     protected float Tik;
-
-     void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-
-        
-    }
 
      void Update()
     {
@@ -62,5 +57,16 @@ public class EnemyMove : MonoBehaviour
         }
     }
 
+    protected void GotHurt()
+    {
 
+        if (EnemyState.WasAttack && EnemyState.WasDect)
+        {
+            nav.speed = 0;
+        }
+        else
+        {
+            nav.speed = tempSpeed;
+        }
+    }
 }

@@ -8,10 +8,10 @@ public class YellowEnemy : EnemyMove
 
     public Collider AttackArea;
 
-
     void Start()
     {
 
+        EnemyState = GetComponentInChildren<EnemyState>();
         playerPos = GameObject.FindWithTag("Player").transform;
         target = GameObject.FindWithTag("Player").transform;
 
@@ -21,14 +21,22 @@ public class YellowEnemy : EnemyMove
     // Update is called once per frame
     void Update()
     {
+        Attack();
+
         TurnAround();
 
+        GotHurt();
 
         nav.SetDestination(target.position);
     }
 
     private void Attack()
     {
+        if (EnemyState.WasAttack && EnemyState.WasDect)
+        {
+            return;
+        }
+
         Vector3 center = AttackArea.bounds.center;
         Vector3 size = AttackArea.bounds.size;
 

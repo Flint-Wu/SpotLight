@@ -28,13 +28,17 @@ public class RedEnemy : EnemyMove
     {
         Attack();
         TurnAround();
-
-
+        GotHurt();
         nav.SetDestination(target.position);
     }
 
     private void Attack() 
     {
+        if (EnemyState.WasAttack && EnemyState.WasDect)
+        {
+            return;
+        }
+
         Vector3 center = AttackArea.bounds.center;
         Vector3 size = AttackArea.bounds.size;
 

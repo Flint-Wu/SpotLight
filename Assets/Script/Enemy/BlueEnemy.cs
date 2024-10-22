@@ -11,29 +11,35 @@ public class BlueEnemy : EnemyMove
 
     void Start()
     {
-
+        EnemyState = GetComponentInChildren<EnemyState>();
         playerPos = GameObject.FindWithTag("Player").transform;
         target = GameObject.FindWithTag("Player").transform;
 
         tempScale = transform.localScale;
+        tempSpeed = nav.speed;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Attack();
         TurnAround();
-
+        GotHurt();
         nav.SetDestination(target.position);
     }
 
     private void Attack()
     {
+        if (EnemyState.WasAttack && EnemyState.WasDect)
+        {
+            return;
+        }
+
         Vector3 center = AttackArea.bounds.center;
         Vector3 size = AttackArea.bounds.size;
 
         Collider[] collidersInside = Physics.OverlapBox(center, size / 2);
 
-        float tempSpeed = nav.speed;
 
         if (playerDis <= nav.stoppingDistance)//和玩家距离到达设定数值
         {
@@ -57,4 +63,6 @@ public class BlueEnemy : EnemyMove
             nav.speed = tempSpeed;
         }
     }
+
+
 }
