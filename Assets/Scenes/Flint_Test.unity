@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &117897679
 Transform:
   m_ObjectHideFlags: 0
@@ -175,9 +175,9 @@ MonoBehaviour:
   BLUE: {fileID: 4129882352865474788, guid: 7c89fbd47438be642845e02e2d4449e4, type: 3}
   YELLOW: {fileID: 8518454795463713596, guid: e1508fcc245b8084599955cc9cb6d300, type: 3}
   redMaxCount: 2
-  blueMaxCount: 5
-  yellowMaxCount: 5
-  spawnInterval: 1
+  blueMaxCount: 3
+  yellowMaxCount: 3
+  spawnInterval: 2
 --- !u!1 &128278650
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,7 +2260,7 @@ GameObject:
   - component: {fileID: 1507046354}
   m_Layer: 0
   m_Name: Weapon
-  m_TagString: Untagged
+  m_TagString: playerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2557,7 +2557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1585866395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2667,7 +2667,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596739180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29, y: 0, z: 2.23}
+  m_LocalPosition: {x: -20.94, y: 0, z: 2.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3508,6 +3508,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4129882352375871475, guid: 7c89fbd47438be642845e02e2d4449e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4129882352865474784, guid: 7c89fbd47438be642845e02e2d4449e4,
         type: 3}
       propertyPath: target
@@ -3581,6 +3586,11 @@ PrefabInstance:
     - target: {fileID: 4129882352865474788, guid: 7c89fbd47438be642845e02e2d4449e4,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129882352865474789, guid: 7c89fbd47438be642845e02e2d4449e4,
+        type: 3}
+      propertyPath: m_Speed
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

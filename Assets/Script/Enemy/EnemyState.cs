@@ -16,16 +16,11 @@ public class EnemyState : MonoBehaviour
     public bool WasDect,WasAttack;
 
     public string tag;
-    
 
-
-    void Start()
-    {
-        playerLight = GameObject.FindWithTag("playerAttack");
-    }
 
     private void OnEnable()
     {
+        playerLight = GameObject.FindWithTag("playerAttack");
     }
 
     private void OnDisable()
@@ -41,7 +36,12 @@ public class EnemyState : MonoBehaviour
             Die();
         }
 
-        if (!playerLight.activeInHierarchy)
+        //if (!playerLight.activeInHierarchy)
+        //{
+        //    WasAttack = false;
+        //}
+
+        if (!playerLight.transform.GetChild(0).gameObject.activeInHierarchy)
         {
             WasAttack = false;
         }
@@ -94,6 +94,6 @@ public class EnemyState : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject.transform.parent.gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }
