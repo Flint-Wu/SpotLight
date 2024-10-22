@@ -16,6 +16,9 @@ public class RedEnemy : EnemyMove
 
     void Start()
     {
+        playerPos = GameObject.FindWithTag("Player").transform;
+        target= GameObject.FindWithTag("Player").transform;
+
 
         tempScale = transform.localScale;
     }
@@ -25,6 +28,9 @@ public class RedEnemy : EnemyMove
     {
         Attack();
         TurnAround();
+
+
+        nav.SetDestination(target.position);
     }
 
     private void Attack() 

@@ -11,6 +11,10 @@ public class YellowEnemy : EnemyMove
 
     void Start()
     {
+
+        playerPos = GameObject.FindWithTag("Player").transform;
+        target = GameObject.FindWithTag("Player").transform;
+
         tempScale = transform.localScale;
     }
 
@@ -18,6 +22,9 @@ public class YellowEnemy : EnemyMove
     void Update()
     {
         TurnAround();
+
+
+        nav.SetDestination(target.position);
     }
 
     private void Attack()
