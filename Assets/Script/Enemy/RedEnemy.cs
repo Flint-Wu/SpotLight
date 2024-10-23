@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class RedEnemy : EnemyMove
 {
@@ -16,6 +13,7 @@ public class RedEnemy : EnemyMove
 
     void Start()
     {
+        EnemyState = GetComponentInChildren<EnemyState>();
         playerPos = GameObject.FindWithTag("Player").transform;
         target= GameObject.FindWithTag("Player").transform;
 

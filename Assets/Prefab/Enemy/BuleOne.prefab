@@ -281,6 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDis: 0
+  tempSpeed: 3.5
   Attacking: 0
   playerPos: {fileID: 0}
   target: {fileID: 0}

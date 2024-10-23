@@ -18,8 +18,9 @@ public class Enemy_Birth : MonoBehaviour
     private int yellowMaxCount = 5;
 
     // 追踪每种颜色敌人的生成数量
-    private int redCount = 0;
-    private int blueCount = 0;
+    [SerializeField]
+    private int redCount = 0; [SerializeField]
+    private int blueCount = 0; [SerializeField]
     private int yellowCount = 0;
 
     // 敌人生成的时间间隔
