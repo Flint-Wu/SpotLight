@@ -61,6 +61,13 @@ public class Enemy_Birth : MonoBehaviour
         // 如果没有可用生成点，则返回
         if (tempCount == 0) return;
 
+        // 检查是否已经达到所有颜色敌人的生成上限
+        if (redCount >= redMaxCount && blueCount >= blueMaxCount && yellowCount >= yellowMaxCount)
+        {
+            Debug.Log("所有颜色的敌人都达到了生成上限");
+            return;
+        }
+
         // 随机选择一个生成点
         int numPoint = Random.Range(0, tempCount);
         Vector3 spawnPosition = enemy_BirthDexts_Temp[numPoint].transform.position;
@@ -68,7 +75,8 @@ public class Enemy_Birth : MonoBehaviour
         // 随机生成敌人的颜色，但要考虑每种颜色的上限
         GameObject selectedEnemy = null;
 
-        while (selectedEnemy == null)
+        int attempts = 0;
+        while (selectedEnemy == null && attempts < 100) // 防止无限循环，增加最大尝试次数
         {
             int randomColor = Random.Range(0, 3);  // 0=RED, 1=BLUE, 2=YELLOW
 
@@ -96,6 +104,14 @@ public class Enemy_Birth : MonoBehaviour
                     }
                     break;
             }
+
+            attempts++;
+        }
+
+        if (attempts >= 100)
+        {
+            Debug.LogWarning("未能生成敌人，已达到最大尝试次数");
+            return;
         }
 
         // 生成敌人
@@ -104,4 +120,5 @@ public class Enemy_Birth : MonoBehaviour
             Instantiate(selectedEnemy, spawnPosition, Quaternion.identity);
         }
     }
+
 }
