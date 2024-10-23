@@ -70,3 +70,11 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/Texture/Ground/地面材质.png
+Assets/Texture/Ground/地面材质.png.meta
+Assets/Texture/Ground/公园1.png
+Assets/Texture/Ground/公园1.png.meta
+Assets/Texture/Ground/公园2.png
+Assets/Texture/Ground/公园2.png.meta
+Assets/Texture/Ground/拐角.png
+Assets/Texture/Ground/拐角.png.meta
