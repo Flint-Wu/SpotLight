@@ -1439,7 +1439,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117897678}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4847c86f8b641d34a8dcb077476a5dff, type: 3}
   m_Name: 
@@ -1448,12 +1448,9 @@ MonoBehaviour:
   RED: {fileID: 1742954127719686165, guid: f455cc7d79a31a348aae2d82a3226b8d, type: 3}
   BLUE: {fileID: 4129882352865474788, guid: 7c89fbd47438be642845e02e2d4449e4, type: 3}
   YELLOW: {fileID: 8518454795463713596, guid: e1508fcc245b8084599955cc9cb6d300, type: 3}
-  redMaxCount: 2
-  blueMaxCount: 4
-  yellowMaxCount: 4
-  redCount: 0
-  blueCount: 0
-  yellowCount: 0
+  redMaxCount: 1
+  blueMaxCount: 1
+  yellowMaxCount: 1
   spawnInterval: 2
 --- !u!1 &126280627
 GameObject:

@@ -5,27 +5,24 @@ public class Enemy_Birth : MonoBehaviour
     [SerializeField]
     private Enemy_BirthDext[] enemy_BirthDexts;  // 生成敌人的点
     private Enemy_BirthDext[] enemy_BirthDexts_Temp;  // 临时存储允许生成的点
-    private GameObject BornEnemies;
 
     public GameObject RED, BLUE, YELLOW;  // 敌人的预制体
 
     // 控制敌人的生成上限
     [SerializeField]
-    private int redMaxCount = 5;
+    private int redMaxCount = 1;
     [SerializeField]
-    private int blueMaxCount = 5;
+    private int blueMaxCount = 1;
     [SerializeField]
-    private int yellowMaxCount = 5;
-
-    // 追踪每种颜色敌人的生成数量
-    [SerializeField]
-    private int redCount = 0; [SerializeField]
-    private int blueCount = 0; [SerializeField]
-    private int yellowCount = 0;
+    private int yellowMaxCount = 1;
 
     // 敌人生成的时间间隔
     public float spawnInterval = 5f;
     private float spawnTimer;
+
+    public int redCount;
+    public int blueCount;
+    public int yellowCount;
 
     void Start()
     {
@@ -40,12 +37,17 @@ public class Enemy_Birth : MonoBehaviour
         spawnTimer -= Time.deltaTime;
         if (spawnTimer <= 0f)
         {
-            creatMonster();
+            CreateMonster();
             spawnTimer = spawnInterval;  // 重置计时器
         }
+
+        // 通过查找场景中对应标签的敌人数量
+        redCount = GameObject.FindGameObjectsWithTag("Red").Length;
+        blueCount = GameObject.FindGameObjectsWithTag("Blue").Length;
+        yellowCount = GameObject.FindGameObjectsWithTag("Yellow").Length;
     }
 
-    void creatMonster()
+    void CreateMonster()
     {
         // 筛选允许生成的点
         int tempCount = 0;
@@ -60,6 +62,8 @@ public class Enemy_Birth : MonoBehaviour
 
         // 如果没有可用生成点，则返回
         if (tempCount == 0) return;
+
+
 
         // 检查是否已经达到所有颜色敌人的生成上限
         if (redCount >= redMaxCount && blueCount >= blueMaxCount && yellowCount >= yellowMaxCount)
@@ -86,21 +90,18 @@ public class Enemy_Birth : MonoBehaviour
                     if (redCount < redMaxCount)
                     {
                         selectedEnemy = RED;
-                        redCount++;
                     }
                     break;
                 case 1:
                     if (blueCount < blueMaxCount)
                     {
                         selectedEnemy = BLUE;
-                        blueCount++;
                     }
                     break;
                 case 2:
                     if (yellowCount < yellowMaxCount)
                     {
                         selectedEnemy = YELLOW;
-                        yellowCount++;
                     }
                     break;
             }
@@ -120,5 +121,4 @@ public class Enemy_Birth : MonoBehaviour
             Instantiate(selectedEnemy, spawnPosition, Quaternion.identity);
         }
     }
-
 }
