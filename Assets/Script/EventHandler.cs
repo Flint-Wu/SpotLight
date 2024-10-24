@@ -35,4 +35,9 @@ public static class EventHandler
         EnemyDectedEvent?.Invoke(Enemy);
     }
 
+    public static event Action UIchange;
+    public static void CallUIchange()
+    {
+        UIchange?.Invoke();
+    }
 }

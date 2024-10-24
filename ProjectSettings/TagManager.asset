@@ -10,6 +10,8 @@ TagManager:
   - BlueLight
   - YellowLight
   - RedLight
+  - Goal
+  - HandRot
   layers:
   - Default
   - TransparentFX

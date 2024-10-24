@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem; // 引入 New Input System 命名空间
 
 public class PlayerMovementTutorial : MonoBehaviour
 {
@@ -17,8 +18,7 @@ public class PlayerMovementTutorial : MonoBehaviour
 
     public Transform orientation;
 
-    float horizontalInput;
-    float verticalInput;
+    private Vector2 moveInput;  // 用于存储 WASD 输入值
 
     public Material topLeftMaterial, topRightMaterial, bottomLeftMaterial, bottomRightMaterial;
     public Material topCenterMaterial, bottomCenterMaterial;  // 新增两个材质球：中上和中下
@@ -28,44 +28,62 @@ public class PlayerMovementTutorial : MonoBehaviour
 
     Rigidbody rb;
 
+    // 引用你创建的 Input Action Asset
+    public PlayerInput playerInput;
+
+    private void Awake()
+    {
+        playerInput = new PlayerInput();
+
+    }
+
+    private void OnEnable()
+    {
+        playerInput.Enable();
+    }
+
+
+    private void OnDisable()
+    {
+        playerInput.Disable();
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
         readyToJump = true;
+
+
     }
 
     private void Update()
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
 
-        MyInput();
         SpeedControl();
         Pic();  // 检测鼠标位置并更改材质球
+
+        MovePlayer();
     }
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        
     }
 
-    private void MyInput()
-    {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-    }
 
     private void MovePlayer()
     {
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        moveInput = playerInput.Gaming.Move.ReadValue<Vector2>();
+
+        // 使用 moveInput.x 和 moveInput.y 来获取横向和纵向输入
+        moveDirection = orientation.forward * moveInput.y + orientation.right * moveInput.x;
 
         rb.velocity = moveDirection.normalized * moveSpeed * 10f;
 
-        if (horizontalInput != 0 && verticalInput != 0 && rb.velocity != Vector3.zero)
-        {
-            rb.velocity = new Vector3(0, rb.velocity.y, 0);
-        }
+
     }
 
     private void SpeedControl()
@@ -81,12 +99,10 @@ public class PlayerMovementTutorial : MonoBehaviour
 
     private void Pic()
     {
-        Vector3 mousePos = Input.mousePosition;
+        Vector3 mousePos = Mouse.current.position.ReadValue();  // 从 New Input System 获取鼠标位置
         float screenWidth = Screen.width;
         float screenHeight = Screen.height;
 
-        // 屏幕宽度分成三列，分别是左、中、右
-        // 屏幕高度分成两行，分别是上、下
         bool isLeft = mousePos.x < screenWidth / 3;
         bool isRight = mousePos.x > 2 * screenWidth / 3;
         bool isCenter = !isLeft && !isRight;
@@ -94,7 +110,6 @@ public class PlayerMovementTutorial : MonoBehaviour
         bool isTop = mousePos.y > screenHeight / 2;
         bool isBottom = mousePos.y < screenHeight / 2;
 
-        // 根据鼠标位置来改变材质
         if (isLeft && isTop)
         {
             playerImg.material = topLeftMaterial;    // 左上
@@ -120,4 +135,5 @@ public class PlayerMovementTutorial : MonoBehaviour
             playerImg.material = bottomCenterMaterial;// 中下
         }
     }
+
 }

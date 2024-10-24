@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: b87264d6206756e42a49cc102fb019c3
+  - enabled: 1
     path: Assets/Scenes/Flint_Test.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}
