@@ -49,11 +49,11 @@ public class EnemyMove : MonoBehaviour
 
         if (target.position.z > transform.position.z)
         {
-            transform.localScale = new Vector3(tempScale.x, tempScale.y, -tempScale.z);
+            transform.localScale = new Vector3(tempScale.x, tempScale.y, tempScale.z);
         }
         else if (target.position.z < transform.position.z)
         {
-            transform.localScale = new Vector3(tempScale.x, tempScale.y, tempScale.z);
+            transform.localScale = new Vector3(tempScale.x, tempScale.y, -tempScale.z);
         }
     }
 

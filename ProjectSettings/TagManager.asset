@@ -12,9 +12,9 @@ TagManager:
   - RedLight
   - Goal
   - HandRot
-  - Bule
   - Yellow
   - Red
+  - Blue
   layers:
   - Default
   - TransparentFX
