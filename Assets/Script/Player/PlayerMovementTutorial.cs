@@ -6,7 +6,7 @@ public class PlayerMovementTutorial : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
 
-    bool readyToJump;
+    public Animator animator;
 
     [HideInInspector] public float walkSpeed;
     [HideInInspector] public float sprintSpeed;
@@ -53,9 +53,6 @@ public class PlayerMovementTutorial : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
-        readyToJump = true;
-
-
     }
 
     private void Update()
@@ -66,6 +63,8 @@ public class PlayerMovementTutorial : MonoBehaviour
         Pic();  // 检测鼠标位置并更改材质球
 
         MovePlayer();
+
+        animator.SetFloat("Speed", rb.velocity.magnitude);
     }
 
     private void FixedUpdate()
@@ -112,27 +111,27 @@ public class PlayerMovementTutorial : MonoBehaviour
 
         if (isLeft && isTop)
         {
-            playerImg.material = topLeftMaterial;    // 左上
+            animator.SetFloat("Blend", 0);
         }
         else if (isRight && isTop)
         {
-            playerImg.material = topRightMaterial;   // 右上
+            animator.SetFloat("Blend", 0.4f);
         }
         else if (isLeft && isBottom)
         {
-            playerImg.material = bottomLeftMaterial; // 左下
+            animator.SetFloat("Blend", 0.6f);
         }
         else if (isRight && isBottom)
         {
-            playerImg.material = bottomRightMaterial;// 右下
+            animator.SetFloat("Blend", 1);
         }
         else if (isCenter && isTop)
         {
-            playerImg.material = topCenterMaterial;  // 中上
+            animator.SetFloat("Blend", 0.2f);
         }
         else if (isCenter && isBottom)
         {
-            playerImg.material = bottomCenterMaterial;// 中下
+            animator.SetFloat("Blend", 0.8f);
         }
     }
 
