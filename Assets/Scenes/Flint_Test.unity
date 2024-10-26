@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 8022894}
   m_Layer: 0
   m_Name: Plane (209)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 32130419}
   m_Layer: 0
   m_Name: Plane (182)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 49298195}
   m_Layer: 0
   m_Name: Plane (195)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -920,7 +920,7 @@ GameObject:
   - component: {fileID: 78476495}
   m_Layer: 0
   m_Name: Plane (197)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -2116,7 +2116,7 @@ GameObject:
   - component: {fileID: 147478936}
   m_Layer: 0
   m_Name: Plane (212)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -2797,7 +2797,7 @@ GameObject:
   - component: {fileID: 190522364}
   m_Layer: 0
   m_Name: Plane (200)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -3091,7 +3091,7 @@ GameObject:
   - component: {fileID: 198100321}
   m_Layer: 0
   m_Name: Plane (221)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -3273,6 +3273,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198666397}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &214424368
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4129882352865474787, guid: 7c89fbd47438be642845e02e2d4449e4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129882352865474787, guid: 7c89fbd47438be642845e02e2d4449e4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.874707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129882352865474787, guid: 7c89fbd47438be642845e02e2d4449e4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129882352865474787, guid: 7c89fbd47438be642845e02e2d4449e4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.2936554
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129882352865474787, guid: 7c89fbd47438be642845e02e2d4449e4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129882352865474787, guid: 7c89fbd47438be642845e02e2d4449e4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129882352865474787, guid: 7c89fbd47438be642845e02e2d4449e4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129882352865474787, guid: 7c89fbd47438be642845e02e2d4449e4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129882352865474787, guid: 7c89fbd47438be642845e02e2d4449e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129882352865474787, guid: 7c89fbd47438be642845e02e2d4449e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129882352865474787, guid: 7c89fbd47438be642845e02e2d4449e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129882352865474788, guid: 7c89fbd47438be642845e02e2d4449e4,
+        type: 3}
+      propertyPath: m_Name
+      value: BuleOne
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7c89fbd47438be642845e02e2d4449e4, type: 3}
 --- !u!1 &214500278
 GameObject:
   m_ObjectHideFlags: 0
@@ -3287,7 +3356,7 @@ GameObject:
   - component: {fileID: 214500280}
   m_Layer: 0
   m_Name: Plane (207)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -3385,7 +3454,7 @@ GameObject:
   - component: {fileID: 229136264}
   m_Layer: 0
   m_Name: Plane (222)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -3480,7 +3549,6 @@ GameObject:
   - component: {fileID: 230024121}
   - component: {fileID: 230024124}
   - component: {fileID: 230024123}
-  - component: {fileID: 230024122}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -3503,20 +3571,6 @@ Transform:
   m_Father: {fileID: 1788330833}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &230024122
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 230024120}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &230024123
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3581,7 +3635,7 @@ GameObject:
   - component: {fileID: 230311574}
   m_Layer: 0
   m_Name: Plane (187)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -4378,7 +4432,7 @@ GameObject:
   - component: {fileID: 282174220}
   m_Layer: 0
   m_Name: Plane (204)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -4724,7 +4778,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &313156254
 GameObject:
@@ -4767,9 +4821,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313156254}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 2.81, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0.82, z: -0.682}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1207969796}
   - {fileID: 1971824983}
@@ -4779,7 +4833,7 @@ Transform:
   - {fileID: 1507046351}
   - {fileID: 117897679}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
 --- !u!114 &313156257
 MonoBehaviour:
@@ -4793,7 +4847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5cc1ca8e888b5408bf756027def951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 0.5
   animator: {fileID: 1971824985}
   walkSpeed: 0
   sprintSpeed: 0
@@ -4993,7 +5047,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 30
+  field of view: 10
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -5019,7 +5073,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0.16245988, y: 0.68819094, z: -0.16245987, w: 0.68819106}
-  m_LocalPosition: {x: -40, y: 22.81, z: 0}
+  m_LocalPosition: {x: -40, y: 20.82, z: -0.682}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5222,7 +5276,7 @@ GameObject:
   - component: {fileID: 331127738}
   m_Layer: 0
   m_Name: Plane (176)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -5810,7 +5864,7 @@ GameObject:
   - component: {fileID: 370056873}
   m_Layer: 0
   m_Name: Plane (184)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -5908,7 +5962,7 @@ GameObject:
   - component: {fileID: 374320284}
   m_Layer: 0
   m_Name: Plane (217)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -6006,7 +6060,7 @@ GameObject:
   - component: {fileID: 378473428}
   m_Layer: 0
   m_Name: Plane (201)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -6104,7 +6158,7 @@ GameObject:
   - component: {fileID: 384023789}
   m_Layer: 0
   m_Name: Plane (193)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -6513,7 +6567,7 @@ GameObject:
   - component: {fileID: 436343064}
   m_Layer: 0
   m_Name: Plane (172)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -6709,7 +6763,7 @@ GameObject:
   - component: {fileID: 447654637}
   m_Layer: 0
   m_Name: Plane (188)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -6881,7 +6935,7 @@ MonoBehaviour:
   m_BindingMode: 4
   m_FollowOffset: {x: -40, y: 20, z: 0}
   m_XDamping: 0
-  m_YDamping: 1
+  m_YDamping: 0
   m_ZDamping: 0
   m_AngularDampingMode: 0
   m_PitchDamping: 0
@@ -7438,7 +7492,7 @@ GameObject:
   - component: {fileID: 516604991}
   m_Layer: 0
   m_Name: Plane (192)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -8562,7 +8616,7 @@ Transform:
   m_Children:
   - {fileID: 827228589}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &597993884
 GameObject:
@@ -9342,7 +9396,7 @@ GameObject:
   - component: {fileID: 653501793}
   m_Layer: 0
   m_Name: Plane (202)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -9440,7 +9494,7 @@ GameObject:
   - component: {fileID: 659178233}
   m_Layer: 0
   m_Name: Plane (175)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -10516,7 +10570,7 @@ GameObject:
   - component: {fileID: 759951725}
   m_Layer: 0
   m_Name: Plane (206)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -10600,6 +10654,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759951723}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &774240453
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8518454795463713585, guid: e1508fcc245b8084599955cc9cb6d300,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518454795463713585, guid: e1508fcc245b8084599955cc9cb6d300,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.1648016
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518454795463713585, guid: e1508fcc245b8084599955cc9cb6d300,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518454795463713585, guid: e1508fcc245b8084599955cc9cb6d300,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.56207407
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518454795463713585, guid: e1508fcc245b8084599955cc9cb6d300,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518454795463713585, guid: e1508fcc245b8084599955cc9cb6d300,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518454795463713585, guid: e1508fcc245b8084599955cc9cb6d300,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518454795463713585, guid: e1508fcc245b8084599955cc9cb6d300,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518454795463713585, guid: e1508fcc245b8084599955cc9cb6d300,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518454795463713585, guid: e1508fcc245b8084599955cc9cb6d300,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518454795463713585, guid: e1508fcc245b8084599955cc9cb6d300,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518454795463713596, guid: e1508fcc245b8084599955cc9cb6d300,
+        type: 3}
+      propertyPath: m_Name
+      value: YellowOne
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e1508fcc245b8084599955cc9cb6d300, type: 3}
 --- !u!1 &791202864
 GameObject:
   m_ObjectHideFlags: 0
@@ -11707,7 +11830,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &863455811
 GameObject:
@@ -12034,7 +12157,7 @@ Transform:
   - {fileID: 410087041}
   - {fileID: 565856151}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &911990933
 GameObject:
@@ -12784,7 +12907,7 @@ GameObject:
   - component: {fileID: 1002279896}
   m_Layer: 0
   m_Name: Plane (214)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -12882,7 +13005,7 @@ GameObject:
   - component: {fileID: 1004109974}
   m_Layer: 0
   m_Name: Plane (178)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -12980,7 +13103,7 @@ GameObject:
   - component: {fileID: 1008433957}
   m_Layer: 0
   m_Name: Plane (181)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -13274,7 +13397,7 @@ GameObject:
   - component: {fileID: 1042542614}
   m_Layer: 0
   m_Name: Plane (210)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -13552,7 +13675,7 @@ Transform:
   m_Children:
   - {fileID: 797800509}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1061800815
 GameObject:
@@ -14058,7 +14181,7 @@ GameObject:
   - component: {fileID: 1083252125}
   m_Layer: 0
   m_Name: Plane (186)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -14156,7 +14279,7 @@ GameObject:
   - component: {fileID: 1090643851}
   m_Layer: 0
   m_Name: Plane (224)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -14794,7 +14917,7 @@ GameObject:
   - component: {fileID: 1119390497}
   m_Layer: 0
   m_Name: Plane (225)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -14892,7 +15015,7 @@ GameObject:
   - component: {fileID: 1156882719}
   m_Layer: 0
   m_Name: Plane (215)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -15101,7 +15224,7 @@ GameObject:
   - component: {fileID: 1166747587}
   m_Layer: 0
   m_Name: Plane (223)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -15199,7 +15322,7 @@ GameObject:
   - component: {fileID: 1170032130}
   m_Layer: 0
   m_Name: Plane (219)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -16626,7 +16749,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 1971824983}
   m_Follow: {fileID: 313156256}
   m_Lens:
-    FieldOfView: 30
+    FieldOfView: 10
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -16651,13 +16774,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231809816}
   m_LocalRotation: {x: 0.16245988, y: 0.68819094, z: -0.16245987, w: 0.688191}
-  m_LocalPosition: {x: -40, y: 22.81, z: 0}
+  m_LocalPosition: {x: -40, y: 20.82, z: -0.682}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 456852171}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 106.3, y: -90, z: 0}
 --- !u!1 &1239409684
 GameObject:
@@ -16673,7 +16796,7 @@ GameObject:
   - component: {fileID: 1239409686}
   m_Layer: 0
   m_Name: Plane (183)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -17592,7 +17715,7 @@ GameObject:
   - component: {fileID: 1350419273}
   m_Layer: 0
   m_Name: Plane (213)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -17690,7 +17813,7 @@ GameObject:
   - component: {fileID: 1356901292}
   m_Layer: 0
   m_Name: Plane (174)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -17984,7 +18107,7 @@ GameObject:
   - component: {fileID: 1366343164}
   m_Layer: 0
   m_Name: Plane (199)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -18082,7 +18205,7 @@ GameObject:
   - component: {fileID: 1376610237}
   m_Layer: 0
   m_Name: Plane (189)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -18572,7 +18695,7 @@ GameObject:
   - component: {fileID: 1413600791}
   m_Layer: 0
   m_Name: Plane (203)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -18768,7 +18891,7 @@ GameObject:
   - component: {fileID: 1455149907}
   m_Layer: 0
   m_Name: Plane (196)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -18979,7 +19102,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1481211830
 GameObject:
@@ -19289,7 +19412,7 @@ GameObject:
   - component: {fileID: 1493339286}
   m_Layer: 0
   m_Name: Plane (190)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -19387,7 +19510,7 @@ GameObject:
   - component: {fileID: 1494533211}
   m_Layer: 0
   m_Name: Plane (218)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -19551,7 +19674,7 @@ GameObject:
   - component: {fileID: 1512473630}
   m_Layer: 0
   m_Name: Plane (208)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -19709,7 +19832,7 @@ MonoBehaviour:
   pluginVersion: 20002
   m_ColorFromLight: 1
   m_ColorMode: 0
-  m_ColorFlat: {r: 1, g: 1, b: 1, a: 0.44313726}
+  m_ColorFlat: {r: 1, g: 1, b: 1, a: 0.03529412}
   m_ColorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -19740,15 +19863,15 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   m_BlendingMode: 0
-  m_Intensity: 2
+  m_Intensity: 1
   m_IntensityMultiplier: 1
   m_HDRPExposureWeight: 0
-  m_SpotAngle: 25
+  m_SpotAngle: 15
   m_SpotAngleMultiplier: 1
   m_ConeRadiusStart: 0.13
   m_Scalable: 0
-  m_FallOffStart: 4.61
-  m_FallOffEnd: 10
+  m_FallOffStart: 3.19
+  m_FallOffEnd: 3.55
   m_FallOffEndMultiplier: 1
   m_AttenuationEquation: 0
   m_SideSoftness: 0.0001
@@ -20072,7 +20195,7 @@ GameObject:
   - component: {fileID: 1551644337}
   m_Layer: 0
   m_Name: Plane (177)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -20366,7 +20489,7 @@ GameObject:
   - component: {fileID: 1577202083}
   m_Layer: 0
   m_Name: Plane (180)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -21372,7 +21495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1670013321
 Transform:
   m_ObjectHideFlags: 0
@@ -21419,7 +21542,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1717759940
 GameObject:
@@ -21631,7 +21754,7 @@ GameObject:
   - component: {fileID: 1758167347}
   m_Layer: 0
   m_Name: Plane (179)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -21729,7 +21852,7 @@ GameObject:
   - component: {fileID: 1773419495}
   m_Layer: 0
   m_Name: Plane (226)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -21827,7 +21950,7 @@ GameObject:
   - component: {fileID: 1775758813}
   m_Layer: 0
   m_Name: Plane (211)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -21925,7 +22048,7 @@ GameObject:
   - component: {fileID: 1787966424}
   m_Layer: 0
   m_Name: Plane (198)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -22181,7 +22304,7 @@ GameObject:
   - component: {fileID: 1800824627}
   m_Layer: 0
   m_Name: Plane (216)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -22573,7 +22696,7 @@ GameObject:
   - component: {fileID: 1830041177}
   m_Layer: 0
   m_Name: Plane (173)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -22784,7 +22907,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1862178506
 GameObject:
@@ -22996,7 +23119,7 @@ GameObject:
   - component: {fileID: 1873454429}
   m_Layer: 0
   m_Name: Plane (171)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -23295,7 +23418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1904125224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23386,7 +23509,7 @@ RectTransform:
   - {fileID: 1585866398}
   - {fileID: 601893772}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -24175,7 +24298,7 @@ Transform:
   m_Children:
   - {fileID: 2129071298}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1971824979
 GameObject:
@@ -24251,7 +24374,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 66effd878c19556439c396e84f19b1be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b956f3da53b6afe47b6f8248ba980a3b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -24689,7 +24812,7 @@ GameObject:
   - component: {fileID: 2030547996}
   m_Layer: 0
   m_Name: Plane (194)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -24885,7 +25008,7 @@ GameObject:
   - component: {fileID: 2040040079}
   m_Layer: 0
   m_Name: Plane (185)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -25793,7 +25916,7 @@ Transform:
   - {fileID: 1119390496}
   - {fileID: 1773419494}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2102879535
 GameObject:
@@ -26299,7 +26422,7 @@ GameObject:
   - component: {fileID: 2126110375}
   m_Layer: 0
   m_Name: Plane (205)
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8

@@ -22,7 +22,7 @@ public class PlayerMovementTutorial : MonoBehaviour
 
     public Material topLeftMaterial, topRightMaterial, bottomLeftMaterial, bottomRightMaterial;
     public Material topCenterMaterial, bottomCenterMaterial;  // 新增两个材质球：中上和中下
-    public MeshRenderer playerImg;
+    public SpriteRenderer playerImg;
 
     public Vector3 moveDirection;
 
@@ -52,6 +52,8 @@ public class PlayerMovementTutorial : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        playerImg = GetComponentInChildren<SpriteRenderer>();
 
     }
 
@@ -112,26 +114,32 @@ public class PlayerMovementTutorial : MonoBehaviour
         if (isLeft && isTop)
         {
             animator.SetFloat("Blend", 0);
+            playerImg.flipX = true;
         }
         else if (isRight && isTop)
         {
             animator.SetFloat("Blend", 0.4f);
+            playerImg.flipX = false;
         }
         else if (isLeft && isBottom)
         {
             animator.SetFloat("Blend", 0.6f);
+            playerImg.flipX = true;
         }
         else if (isRight && isBottom)
         {
             animator.SetFloat("Blend", 1);
+            playerImg.flipX = false;
         }
         else if (isCenter && isTop)
         {
             animator.SetFloat("Blend", 0.2f);
+            playerImg.flipX = false;
         }
         else if (isCenter && isBottom)
         {
             animator.SetFloat("Blend", 0.8f);
+            playerImg.flipX = false;
         }
     }
 
