@@ -11,7 +11,6 @@ public class EnemyMove : MonoBehaviour
     public bool Attacking;
 
     public Transform playerPos;
-    protected GameObject player;
     public Transform target; 
     public NavMeshAgent nav;
     protected EnemyState EnemyState;
@@ -22,15 +21,7 @@ public class EnemyMove : MonoBehaviour
 
     protected float Tik;
 
-     void Update()
-    {
-        if (player != null)
-        {
-            MoveTowardsPlayer();
-        }
 
-        
-    }
 
     protected void MoveTowardsPlayer()
     {
@@ -39,7 +30,7 @@ public class EnemyMove : MonoBehaviour
             return;
         }
 
-        float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+        float distanceToPlayer = Vector3.Distance(transform.position, target.transform.position);
         playerDis = distanceToPlayer;
 
     }
