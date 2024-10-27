@@ -15,6 +15,7 @@ public class EnemyMove : MonoBehaviour
     public Transform target; 
     public NavMeshAgent nav;
     protected EnemyState EnemyState;
+    public RectTransform TalkPanel;
 
     [SerializeField]
     protected Vector3 tempScale;
@@ -45,15 +46,15 @@ public class EnemyMove : MonoBehaviour
 
     protected void TurnAround()
     {
-        
-
         if (target.position.z > transform.position.z)
         {
             transform.localScale = new Vector3(tempScale.x, tempScale.y, tempScale.z);
+            TalkPanel.localScale = new Vector3(1, 1, 1);
         }
         else if (target.position.z < transform.position.z)
         {
             transform.localScale = new Vector3(tempScale.x, tempScale.y, -tempScale.z);
+            TalkPanel.localScale = new Vector3(-1, 1, 1);
         }
     }
 
