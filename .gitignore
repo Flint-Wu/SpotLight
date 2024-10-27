@@ -68,25 +68,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
 # Temporary auto-generated Android Assets
-/[Aa]ssets/[Ss]treamingAssets/aa.meta
-/[Aa]ssets/[Ss]treamingAssets/aa/*
-Assets/Texture/Ground/地面材质.png
-Assets/Texture/Ground/地面材质.png.meta
-Assets/Texture/Ground/公园1.png
-Assets/Texture/Ground/公园1.png.meta
-Assets/Texture/Ground/公园2.png
-Assets/Texture/Ground/公园2.png.meta
-Assets/Texture/Ground/拐角.png
-Assets/Texture/Ground/拐角.png.meta
-Assets/Texture/Ground/丁字路口.png
-Assets/Texture/Ground/丁字路口.png.meta
-Assets/Texture/Ground/十字路口.png
-Assets/Texture/Ground/十字路口.png.meta
-Assets/TextMesh Pro/Fonts/MSYH.TTC
-Assets/TextMesh Pro/Fonts/MSYH.TTC.meta
-Assets/TextMesh Pro/Fonts/MSYHBD SDF.asset
-Assets/TextMesh Pro/Fonts/MSYHBD SDF.asset.meta
-Assets/TextMesh Pro/Fonts/MSYHBD.TTC
-Assets/TextMesh Pro/Fonts/MSYHBD.TTC.meta
-Assets/TextMesh Pro/Fonts/MSYHL.TTC
-Assets/TextMesh Pro/Fonts/MSYHL.TTC.meta
+

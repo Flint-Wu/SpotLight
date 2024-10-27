@@ -10828,7 +10828,7 @@ PrefabInstance:
     - target: {fileID: 4753502105167459148, guid: b76bae7beb39c54448cc6b61270ad293,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 109.28604
+      value: 106.36
       objectReference: {fileID: 0}
     - target: {fileID: 4753502105167459148, guid: b76bae7beb39c54448cc6b61270ad293,
         type: 3}
@@ -10838,7 +10838,7 @@ PrefabInstance:
     - target: {fileID: 4753502105167459148, guid: b76bae7beb39c54448cc6b61270ad293,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 152.56892
+      value: 156.91
       objectReference: {fileID: 0}
     - target: {fileID: 4753502105167459148, guid: b76bae7beb39c54448cc6b61270ad293,
         type: 3}
@@ -10874,6 +10874,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452333293247760394, guid: b76bae7beb39c54448cc6b61270ad293,
+        type: 3}
+      propertyPath: playerDis
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b76bae7beb39c54448cc6b61270ad293, type: 3}
@@ -21576,7 +21581,7 @@ GameObject:
   - component: {fileID: 1665004329}
   m_Layer: 6
   m_Name: Sphere
-  m_TagString: Light
+  m_TagString: RedLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
