@@ -23,5 +23,18 @@ public class EnemyAnim : MonoBehaviour
         animator.SetFloat("Speed", speed);
         animator.SetFloat("Horizontal", direction.x); // 左右方向
         animator.SetFloat("Vertical", direction.z);   // 前后方向
+
+
+    }
+
+    public void Attack()
+    {
+        animator.SetTrigger("Attack1");
+    }
+
+    public void Clone()
+    {
+        Destroy(transform.parent.parent.gameObject);
     }
 }
+

@@ -567,6 +567,7 @@ MonoBehaviour:
   tempScale: {x: 0, y: 0, z: 0}
   AttackReadyTime: 1
   AttackArea: {fileID: 4129882352350021622}
+  Damage: 1
 --- !u!114 &1390913996
 MonoBehaviour:
   m_ObjectHideFlags: 0

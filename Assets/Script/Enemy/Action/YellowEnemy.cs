@@ -5,10 +5,13 @@ public class YellowEnemy : EnemyMove
     public float AttackReadyTime;
 
     public Collider AttackArea;
+    public float Damage;
+
+    public EnemyAnim EnemyAnim;
 
     void Start()
     {
-
+        EnemyAnim = GetComponentInChildren<EnemyAnim>();
         EnemyState = GetComponentInChildren<EnemyState>();
         playerPos = GameObject.FindWithTag("Player").transform;
         target = GameObject.FindWithTag("Player").transform;
@@ -54,7 +57,8 @@ public class YellowEnemy : EnemyMove
                 {
                     if (collidersInside[i].transform.CompareTag("Player"))
                     {
-                        collidersInside[i].transform.GetComponent<PlayerState>().Health -= 1;
+                        collidersInside[i].transform.GetComponent<PlayerState>().GotHurt(Damage);
+                        EnemyAnim.Attack();
                     }
                 }
 

@@ -5,11 +5,9 @@ public class RedEnemy : EnemyMove
     public float AttackReadyTime;
 
     public Collider AttackArea;
-
-    
-
+    public float Damage;
     // 使用 Physics.OverlapBox 来检查这个区域内是否有其他 colliders
-    
+
 
     void Start()
     {
@@ -56,7 +54,7 @@ public class RedEnemy : EnemyMove
                 {
                     if (collidersInside[i].transform.CompareTag("Player"))
                     {
-                        collidersInside[i].transform.GetComponent<PlayerState>().Health -= 1;
+                        collidersInside[i].transform.GetComponent<PlayerState>().GotHurt(Damage);
                     }
                 }
 

@@ -7,7 +7,7 @@ public class BlueEnemy : EnemyMove
     public float AttackReadyTime;
 
     public Collider AttackArea;
-
+    public float Damage;
 
     void Start()
     {
@@ -53,7 +53,7 @@ public class BlueEnemy : EnemyMove
                 {
                     if (collidersInside[i].transform.CompareTag("Player"))
                     {
-                        collidersInside[i].transform.GetComponent<PlayerState>().Health -= 1;
+                        collidersInside[i].transform.GetComponent<PlayerState>().GotHurt(Damage);
                     }
                 }
 
