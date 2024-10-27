@@ -1,30 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
     public GameObject Light;
-    
+    public AudioClip attackSound;  // 绑定你的音效文件
+    private AudioSource audioSource;
 
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0)) // 按下左键
         {
             Light.SetActive(true);
-            Debug.Log("1");
+            audioSource.PlayOneShot(attackSound);  // 播放音效
+            Debug.Log("攻击音效播放");
         }
-        else
+        else if (Input.GetMouseButtonUp(0)) // 松开左键
         {
             Light.SetActive(false);
         }
     }
-
-
 }

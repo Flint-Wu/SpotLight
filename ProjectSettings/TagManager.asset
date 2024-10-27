@@ -16,6 +16,7 @@ TagManager:
   - Red
   - Blue
   - BossBIrth
+  - Boss
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,6 @@ public class PlayerMovementTutorial : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
-
     public Animator animator;
 
     [HideInInspector] public float walkSpeed;
@@ -25,23 +24,24 @@ public class PlayerMovementTutorial : MonoBehaviour
     public SpriteRenderer playerImg;
 
     public Vector3 moveDirection;
-
-    Rigidbody rb;
+    private Rigidbody rb;
 
     // 引用你创建的 Input Action Asset
     public PlayerInput playerInput;
 
+    // 音效组件
+    public AudioClip moveSound;
+    private AudioSource audioSource;
+
     private void Awake()
     {
         playerInput = new PlayerInput();
-
     }
 
     private void OnEnable()
     {
         playerInput.Enable();
     }
-
 
     private void OnDisable()
     {
@@ -52,9 +52,12 @@ public class PlayerMovementTutorial : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-
         playerImg = GetComponentInChildren<SpriteRenderer>();
 
+        // 初始化音效组件
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.clip = moveSound;
+        audioSource.loop = true;  // 设置音效循环
     }
 
     private void Update()
@@ -69,22 +72,26 @@ public class PlayerMovementTutorial : MonoBehaviour
         animator.SetFloat("Speed", rb.velocity.magnitude);
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
-
-
     private void MovePlayer()
     {
         moveInput = playerInput.Gaming.Move.ReadValue<Vector2>();
 
         // 使用 moveInput.x 和 moveInput.y 来获取横向和纵向输入
         moveDirection = orientation.forward * moveInput.y + orientation.right * moveInput.x;
-
         rb.velocity = moveDirection.normalized * moveSpeed * 10f;
 
-
+        // 播放移动音效
+        if (moveDirection.magnitude > 0 && grounded)
+        {
+            if (!audioSource.isPlaying)  // 如果音效未播放，则开始播放
+            {
+                audioSource.Play();
+            }
+        }
+        else
+        {
+            audioSource.Stop();  // 停止播放音效
+        }
     }
 
     private void SpeedControl()
@@ -142,5 +149,4 @@ public class PlayerMovementTutorial : MonoBehaviour
             playerImg.flipX = false;
         }
     }
-
 }
