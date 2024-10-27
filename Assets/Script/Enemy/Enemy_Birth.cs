@@ -6,7 +6,7 @@ public class Enemy_Birth : MonoBehaviour
     private Enemy_BirthDext[] enemy_BirthDexts;  // 生成敌人的点
     private Enemy_BirthDext[] enemy_BirthDexts_Temp;  // 临时存储允许生成的点
 
-    public GameObject RED, BLUE, YELLOW;  // 敌人的预制体
+    public GameObject RED, BLUE, YELLOW,BOSS;  // 敌人的预制体
 
     // 控制敌人的生成上限
     [SerializeField]
@@ -15,6 +15,8 @@ public class Enemy_Birth : MonoBehaviour
     private int blueMaxCount = 1;
     [SerializeField]
     private int yellowMaxCount = 1;
+    [SerializeField]
+    private int BossMaxCount = 1;
 
     // 敌人生成的时间间隔
     public float spawnInterval = 5f;
@@ -23,6 +25,7 @@ public class Enemy_Birth : MonoBehaviour
     public int redCount;
     public int blueCount;
     public int yellowCount;
+    public int BossCount;
 
     void Start()
     {
@@ -45,6 +48,7 @@ public class Enemy_Birth : MonoBehaviour
         redCount = GameObject.FindGameObjectsWithTag("Red").Length;
         blueCount = GameObject.FindGameObjectsWithTag("Blue").Length;
         yellowCount = GameObject.FindGameObjectsWithTag("Yellow").Length;
+        BossCount = GameObject.FindGameObjectsWithTag("Boss").Length;
     }
 
     void CreateMonster()
@@ -53,20 +57,24 @@ public class Enemy_Birth : MonoBehaviour
         int tempCount = 0;
         for (int i = 0; i < enemy_BirthDexts.Length; i++)
         {
-            if (enemy_BirthDexts[i].BrithAllow)
+            if (enemy_BirthDexts[i].BrithAllow && !enemy_BirthDexts[i].BossBirth)
             {
                 enemy_BirthDexts_Temp[tempCount] = enemy_BirthDexts[i];
                 tempCount++;
             }
+            if (enemy_BirthDexts[i].BrithAllow && enemy_BirthDexts[i].BossBirth)
+            {
+                enemy_BirthDexts_Temp[tempCount] = enemy_BirthDexts[i];
+                tempCount++;
+            }
+
         }
 
         // 如果没有可用生成点，则返回
         if (tempCount == 0) return;
 
-
-
         // 检查是否已经达到所有颜色敌人的生成上限
-        if (redCount >= redMaxCount && blueCount >= blueMaxCount && yellowCount >= yellowMaxCount)
+        if (redCount >= redMaxCount && blueCount >= blueMaxCount && yellowCount >= yellowMaxCount && BossCount >= BossMaxCount)
         {
             Debug.Log("所有颜色的敌人都达到了生成上限");
             return;
@@ -82,7 +90,7 @@ public class Enemy_Birth : MonoBehaviour
         int attempts = 0;
         while (selectedEnemy == null && attempts < 100) // 防止无限循环，增加最大尝试次数
         {
-            int randomColor = Random.Range(0, 3);  // 0=RED, 1=BLUE, 2=YELLOW
+            int randomColor = Random.Range(0, 4);  // 0=RED, 1=BLUE, 2=YELLOW
 
             switch (randomColor)
             {
@@ -102,6 +110,12 @@ public class Enemy_Birth : MonoBehaviour
                     if (yellowCount < yellowMaxCount)
                     {
                         selectedEnemy = YELLOW;
+                    }
+                    break;
+                case 3:
+                    if (BossCount < BossMaxCount)
+                    {
+                        selectedEnemy = BOSS;
                     }
                     break;
             }
