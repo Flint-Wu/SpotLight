@@ -7,6 +7,7 @@ public class PlayerState : MonoBehaviour
     public float Health;
     public float maxHealth;
 
+    public float ReLifeSpeed;
 
     void Start()
     {
@@ -16,6 +17,9 @@ public class PlayerState : MonoBehaviour
 
     void Update()
     {
-        
+        if (Health < maxHealth)
+        {
+            Health += Time.deltaTime * ReLifeSpeed;
+        }
     }
 }
